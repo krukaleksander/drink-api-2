@@ -1,12 +1,21 @@
 import React from 'react'
 import CocktailList from '../components/CocktailList'
 import SearchForm from '../components/SearchForm'
+import { useGlobalContext } from '../context'
+import Loading from '../components/Loading'
 
 const Home = () => {
+  const { coctails, loading } = useGlobalContext();
+
+  if (loading) {
+    return <Loading />
+  }
+
   return (
-    <div>
-      <h2>home page</h2>
-    </div>
+    <main>
+      <CocktailList />
+      <SearchForm />
+    </main>
   )
 }
 

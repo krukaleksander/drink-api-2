@@ -5,7 +5,6 @@ import { useGlobalContext } from '../context'
 
 const CocktailList = () => {
   const { cocktails, loading } = useGlobalContext();
-  console.log(cocktails.length < 1);
   if (cocktails.length < 1) {
     return (
       <h2 className="section-title">
@@ -15,9 +14,14 @@ const CocktailList = () => {
 
   }
   return (
-    <div>
-      <h2>cocktail list component</h2>
-    </div>
+    <section className="section">
+      <h2 className="section-title">Cocktails</h2>
+      <div className="cocktails-center">
+        {cocktails.map(item => {
+          return <Cocktail key={item.id} {...item} />
+        })}
+      </div>
+    </section>
   )
 }
 

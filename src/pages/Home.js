@@ -13,8 +13,8 @@ const Home = () => {
 
   return (
     <main>
-      <CocktailList />
       <SearchForm />
+      <CocktailList />
     </main>
   )
 }

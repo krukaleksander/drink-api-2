@@ -18,7 +18,7 @@ const App = () => {
                 <Route path='/about'>
                     <About />
                 </Route>
-                <Route path='/coctail/:id'>
+                <Route path='/cocktail/:id'>
                     <SingleCoctail />
                 </Route>
                 <Route path='*'>

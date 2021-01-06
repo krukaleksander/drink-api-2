@@ -7,13 +7,11 @@ import Loading from '../components/Loading'
 const Home = () => {
   const { cocktails, loading } = useGlobalContext();
 
-  if (loading) {
-    return <Loading />
-  }
 
   return (
     <main>
       <SearchForm />
+      {loading ? <Loading /> : <CocktailList />}
       <CocktailList />
     </main>
   )
